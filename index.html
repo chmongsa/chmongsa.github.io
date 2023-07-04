@@ -1,250 +1,53 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=1920, user-scalable=yes">
-	<title>[대한상공회의소]위해상품 판매차단 시스템</title>
-	<style>
-		@font-face {
-		  font-family: 'Noto Sans KR';
-		  font-style: normal;
-		  font-weight: 100;
-		  src: url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-100.eot'); /* IE9 Compat Modes */
-		  src: local(''),
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-100.woff2') format('woff2'), /* Super Modern Browsers */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-100.woff') format('woff'), /* Modern Browsers */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-100.ttf') format('truetype'), /* Safari, Android, iOS */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-100.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-		}
-		/* noto-sans-kr-300 - latin_korean */
-		@font-face {
-		  font-family: 'Noto Sans KR';
-		  font-style: normal;
-		  font-weight: 300;
-		  src: url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-300.eot'); /* IE9 Compat Modes */
-		  src: local(''),
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-300.woff2') format('woff2'), /* Super Modern Browsers */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-300.woff') format('woff'), /* Modern Browsers */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-300.ttf') format('truetype'), /* Safari, Android, iOS */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-300.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-		}
-		/* noto-sans-kr-regular - latin_korean */
-		@font-face {
-		  font-family: 'Noto Sans KR';
-		  font-style: normal;
-		  font-weight: 400;
-		  src: url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-regular.eot'); /* IE9 Compat Modes */
-		  src: local(''),
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-regular.woff2') format('woff2'), /* Super Modern Browsers */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-regular.woff') format('woff'), /* Modern Browsers */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-regular.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-		}
-		/* noto-sans-kr-500 - latin_korean */
-		@font-face {
-		  font-family: 'Noto Sans KR';
-		  font-style: normal;
-		  font-weight: 500;
-		  src: url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-500.eot'); /* IE9 Compat Modes */
-		  src: local(''),
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-500.woff2') format('woff2'), /* Super Modern Browsers */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-500.woff') format('woff'), /* Modern Browsers */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-500.ttf') format('truetype'), /* Safari, Android, iOS */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-500.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-		}
-		/* noto-sans-kr-700 - latin_korean */
-		@font-face {
-		  font-family: 'Noto Sans KR';
-		  font-style: normal;
-		  font-weight: 700;
-		  src: url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-700.eot'); /* IE9 Compat Modes */
-		  src: local(''),
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-700.woff2') format('woff2'), /* Super Modern Browsers */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-700.woff') format('woff'), /* Modern Browsers */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-700.ttf') format('truetype'), /* Safari, Android, iOS */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-700.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-		}
-		/* noto-sans-kr-900 - latin_korean */
-		@font-face {
-		  font-family: 'Noto Sans KR';
-		  font-style: normal;
-		  font-weight: 900;
-		  src: url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-900.eot'); /* IE9 Compat Modes */
-		  src: local(''),
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-900.woff2') format('woff2'), /* Super Modern Browsers */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-900.woff') format('woff'), /* Modern Browsers */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-900.ttf') format('truetype'), /* Safari, Android, iOS */
-			   url('https://upss.gs1kr.org/comp/resources/fonts/noto-sans-kr-v13-latin_korean-900.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-		}
+<html lang="ko">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width,initial-scale=1">
+	    <title>고희연</title>
+        <link rel="stylesheet" type="text/css" href="./resources/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="./resources/css/common.css" />
 
-		* {margin:0; padding:0; box-sizing:border-box; font-family:"Noto Sans KR", sans-serif; font-weight:400;font-size: 14px;line-height: 20px; color: #333333}
-		body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,select,table,td,textarea,th,ul { margin: 0;padding: 0}
+        <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div>메인 사진 넣기...</div>
+            <div>장소 및 일자</div>
+            <div>
+                <h3>장소</h3>
+                <span>서울 구로구 디지털로 300 롯데시티호텔 3층 C`cafe(씨카페)</span>
+            </div>
+            <div>
+                <h3>일시</h3>
+                <span>2023년 8월 12일 오후 6시 ~ 8시</span>
+            </div>
+            <div>
+                <a href="https://naver.me/GcjWbx2z" target="_blank" alt="네이버지도">네이버지도</a>
+                <a href="nmap://actionPath?parameter=value&appname=https://naver.me/GcjWbx2z" target="_blank" alt="네이버지도">네이버지도</a>
+                <a href="http://map.daum.net/link/to/(주)무문,37.39279493027256,127.1120446864334" target="_blank" alt="카카오지도">
+                    <img src="./resources/images/map_kakao.png" style="width:55px; height: 55px; line-height: 55px; border-radius: 15px; margin:0 auto;">
+                    <span class="font-gothic">카카오지도</span>
+                </a>
 
-	</style>
-</head>
-<body style="margin:0; padding:0;">
-
-<table width="100%" cellspacing="0" cellpadding="0">
-	<tr>
-		<td height="60px" style="background:#fff; border-bottom:1px solid #DBDBDB;" align="center;">
-			<table width="800px" align="center" cellspacing="0" cellpadding="0" style="margin:0 auto;">
-				<tr>
-					<td><img src="https://upss.gs1kr.org/comp/resources/images/email/logo_kcci_c.png" alt=""></td>
-					<td style="text-align:right;"><img src="https://upss.gs1kr.org/comp/resources/images/email/logo_c.png" alt=""></td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr>
-		<td style="background:#F8FAFB; padding:32px 0 20px;">
-			<div style="width:800px; border-radius:4px; margin:0 auto; overflow:hidden; box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);">
-				<table width="100%" align="center" cellspacing="0" cellpadding="0">
-					<tr>
-						<td style="background: transparent linear-gradient(96deg, #312782 0%, #385FC7 89%, #4287ED 100%) 0% 0% no-repeat padding-box; height:90px; padding:0 40px;">
-							<span style="font-size:24px; letter-spacing:-0.06em; color:#fff; font-weight:500;">고기좀아는언니 참나무 불막창</span>
-						</td>
-					</tr>
-					<tr>
-						<td style="background:#fff; padding:34px 40px 40px;">
-							<p style="font-size:0; line-height:0; margin-bottom:10px;"><i style="display:inline-block; width:24px; height:24px; vertical-align:middle; background:url(https://upss.gs1kr.org/comp/resources/images/email/ico_bullet.svg) center no-repeat"></i><span style="font-size:18px; line-height:24px; font-weight:500; color:#111; letter-spacing:-0.045em;vertical-align:middle;">위해상품내역</span></p>			
-							<table width="100%" cellspacing="0" cellpadding="0" style="border-top:2px solid #385FC7;">
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400;">검사기관</th>
-									<td style="padding:5px 10px; border-bottom:1px solid #ccc; font-size:15px; color:#111;"><strong style="font-size:15px; font-weight:700; color:#385fc7;">식약처 식품(KF)</strong></td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400;">문서번호</th>
-									<td style="padding:5px 10px; border-bottom:1px solid #ccc; font-size:15px; color:#111;">3000169162</td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400;">차수</th>
-									<td style="padding:5px 10px; border-bottom:1px solid #ccc; font-size:15px; color:#111;">01</td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400;">전송일시</th>
-									<td style="padding:5px 10px; border-bottom:1px solid #ccc; font-size:15px; color:#111;">20230619152814</td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400;">보고유형명</th>
-									<td style="padding:5px 10px; border-bottom:1px solid #ccc; font-size:15px; color:#111;">자가품질검사 부적합</td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400;">제품명</th>
-									<td style="padding:5px 10px; border-bottom:1px solid #ccc; font-size:15px; color:#111;"><strong style="font-size:15px; font-weight:700; color:#385fc7;">고기좀아는언니 참나무 불막창</strong></td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400;">바코드</th>
-									<td style="padding:5px 10px; border-bottom:1px solid #ccc; font-size:15px; color:#111;"><strong style="font-size:15px; font-weight:700; color:#385fc7;">8809742460033</strong></td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400;">회수사유</th>
-									<td style="padding:5px 10px; border-bottom:1px solid #ccc; font-size:15px; color:#111;">검사결과부적합</td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400;">제조업소명<br/>(사업자번호)</th>
-									<td style="padding:5px 10px; border-bottom:1px solid #ccc; font-size:15px; color:#111;">다원 주식회사 농업회사법인</td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400;">제조일자</th>
-									<td style="padding:5px 10px; border-bottom:1px solid #ccc; font-size:15px; color:#111;">20230510</td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400;">유통기한</th>
-									<td style="padding:5px 10px; border-bottom:1px solid #ccc; font-size:15px; color:#111;">20240509</td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400;">통보유형<br/></th>
-									<td style="padding:5px 10px; border-bottom:1px solid #ccc; font-size:15px; color:#111;">통보</td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400; text-align:center;" colspan="2">제품이미지</th>
-								</tr>
-								<tr>
-									<td style="padding:5px 16px; border-bottom:1px solid #ccc; font-size:15px; color:#111;" colspan="2">
-										<table>
-											<tr>
-												<td style="padding-right: 12px;">
-													<div style="border:1px solid rgba(56, 95, 199, 0.24); background:rgba(234, 239, 249, 0.45) url(https://upss.gs1kr.org/comp/resources/images/email/img_photo.svg) center no-repeat; width:220px; height:150px;"><img src="https://upss.gs1kr.org//attach/2023/05/26/168509203567714764207268808973_01.jpg" style="width:220px; height:150px;"></div>
-												</td>
-												<td style="padding-right: 12px;">
-													<div style="border:1px solid rgba(56, 95, 199, 0.24); background:rgba(234, 239, 249, 0.45) url(https://upss.gs1kr.org/comp/resources/images/email/img_photo.svg) center no-repeat; width:220px; height:150px;"><img src="https://upss.gs1kr.org//attach/2023/05/26/168509203568414764207276420646_02.jpg" style="width:220px; height:150px;"></div>
-												</td>
-												<td>
-													<div style="border:1px solid rgba(56, 95, 199, 0.24); background:rgba(234, 239, 249, 0.45) url(https://upss.gs1kr.org/comp/resources/images/email/img_photo.svg) center no-repeat; width:220px; height:150px;"><img src="https://upss.gs1kr.org//attach/2023/05/26/168509203569214764207283926482_03.jpg" style="width:220px; height:150px;"></div>
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-								<tr>
-									<th style="width:113px; padding:5px 10px; border-bottom:1px solid #ccc; background:#EAEFF9; text-align:left; font-size:15px; font-weight:400; text-align:center;" colspan="2">대한상공회의소 유통물류진흥원 제공 이미지</th>
-								</tr>
-								<tr>
-									<td style="padding:5px 16px; border-bottom:1px solid #ccc; font-size:15px; color:#111;" colspan="2">
-										<table>
-											<tr>
-												<td style="padding-right: 12px;">
-													<div style="border:1px solid rgba(56, 95, 199, 0.24); background:rgba(234, 239, 249, 0.45) url(https://upss.gs1kr.org/comp/resources/images/email/img_photo.svg) center no-repeat; width:220px; height:150px;"><img src="https://gs1.koreannet.or.kr/pr/photoView.do?fileNm=8809742460033_1.jpg&filePath=8809742460019/8809742460033" style="width:220px; height:150px;"></div>
-												</td>
-												<td style="padding-right: 12px;">
-													<div style="border:1px solid rgba(56, 95, 199, 0.24); background:rgba(234, 239, 249, 0.45) url(https://upss.gs1kr.org/comp/resources/images/email/img_photo.svg) center no-repeat; width:220px; height:150px;"><img src="" style="max-width:100%;"></div>
-												</td>
-												<td>
-													<div style="border:1px solid rgba(56, 95, 199, 0.24); background:rgba(234, 239, 249, 0.45) url(https://upss.gs1kr.org/comp/resources/images/email/img_photo.svg) center no-repeat; width:220px; height:150px;"><img src="" style="max-width:100%;"></div>
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-							<div style="text-align:center; margin-top:20px;">
-								<a href="https://upss.gs1kr.org/home/harzd/harzdDetail.gs1?noDocument=3000169162&seq=01&cdInsptmachi=KF" target="_blank" style="display:inline-block; width:200px; height:40px; border-radius:20px; background:#312782; text-align:center; font-size:0; line-height:40px;">
-									<span style="display:inline-block;font-size:16px; letter-spacing:-0.04em; color:#fff; vertical-align:middle;">위해상품 상세보기</span>
-									<i style="display:inline-block; width:14px; height:14px; background:url(https://upss.gs1kr.org/comp/resources/images/email/ico_arrow.svg) center no-repeat; margin-left:6px; vertical-align:middle;"></i>
-								</a>
-								<a href="https://gs1.koreannet.or.kr/pr/8809742460033&status=a" target="_blank" style="display:inline-block; width:200px; height:40px; border-radius:20px; background:#312782; text-align:center; font-size:0; line-height:40px;">
-									<span style="display:inline-block;font-size:16px; letter-spacing:-0.04em; color:#fff; vertical-align:middle;">GS1 제공 제품보기</span>
-									<i style="display:inline-block; width:14px; height:14px; background:url(https://upss.gs1kr.org/comp/resources/images/email/ico_arrow.svg) center no-repeat; margin-left:6px; vertical-align:middle;"></i>
-								</a>
-							</div>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div style="width:800px; margin:0 auto; padding:20px 0; font-size:0; line-height:0;">
-				<a href="https://upss.gs1kr.org" target="_blank" style="display:inline-block; width:259px; height:40px; line-height:35px; border-radius:4px; background:#385fc7; text-align:center;">
-					<span style="display:inline-block;font-size:14px; letter-spacing:-0.04em; color:#fff; vertical-align:middle; line-height:14px">대한상공회의소 유통물류진흥원</span>
-					<i style="display:inline-block; width:14px; height:14px; background:url(https://upss.gs1kr.org/comp/resources/images/email/ico_arrow.svg) center no-repeat; margin-left:6px; vertical-align:middle;"></i>
-				</a>
-				<a href="https://upss.gs1kr.org/comp/cmmn/login" target="_blank" style="display:inline-block; width:259px; height:40px; line-height:35px; border-radius:4px; background:#385fc7; text-align:center; margin-left:11px;">
-					<span style="display:inline-block;font-size:14px; letter-spacing:-0.04em; color:#fff; vertical-align:middle; line-height:14px">유통사 전용 로그인</span>
-					<i style="display:inline-block; width:14px; height:14px; background:url(https://upss.gs1kr.org/comp/resources/images/email/ico_arrow.svg) center no-repeat; margin-left:6px; vertical-align:middle;"></i>
-				</a>
-				<a href="https://upss.gs1kr.org/home/harzd/harzdSearch.gs1" target="_blank" style="display:inline-block; width:259px; height:40px; line-height:35px; border-radius:4px; background:#385fc7; text-align:center; margin-left:11px;">
-					<span style="display:inline-block;font-size:14px; letter-spacing:-0.04em; color:#fff; vertical-align:middle; line-height:14px">오늘의 위해상품</span>
-					<i style="display:inline-block; width:14px; height:14px; background:url(https://upss.gs1kr.org/comp/resources/images/email/ico_arrow.svg) center no-repeat; margin-left:6px; vertical-align:middle;"></i>
-				</a>
-			</div>
-		</td>
-	</tr>
-	<tr>
-		<td style="border-top:1px solid #DBDBDB; background:#F1F3F4; padding:20px 0 23px; text-align:center;">
-			<p style="font-size:14px; color:#767676; margin:0; margin-bottom:15px;">본 메일은 발신 전용 메일입니다. 메일 관련 문의사항은 <strong style="font-weight:700; color:#385fc7; text-decoration:underline;">담당자</strong>에게 문의 해 주시기 바랍니다.</p>
-			<p style="font-size:14px; color:#767676; margin:0; margin-bottom:8px; line-height:20px;">
-				<span style="vertical-align:middle;">서울시 중구 세종대로 39 상공회의소회관 17층 담당자</span> 
-				<i style="width:20px; height:20px; display:inline-block; vertical-align:middle; background:url(https://upss.gs1kr.org/comp/resources/images/email/ico_phone.svg) center no-repeat; margin-left:10px;"></i> 
-				<span style="vertical-align:middle;">02-6050-1484</span> 
-				<i style="width:20px; height:20px; display:inline-block; background:url(https://upss.gs1kr.org/comp/resources/images/email/ico_email.svg) center no-repeat;vertical-align:middle; margin-left:10px;"></i> 
-				<span style="vertical-align:middle;">syum@korcham.net</span></p>
-			<p style="font-size:14px; color:#767676; line-height:20px; margin:0;">Copyright ⓒ 2018 KCCI. GS1 KOREA, All rights reserved.</p>
-		</td>
-	</tr>
-</table>
-
-</body>
+<!-- * 카카오맵 - 지도퍼가기 -->
+<!-- 1. 지도 노드 -->
+<div id="daumRoughmapContainer1688441846638" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+<!-- 3. 실행 스크립트 -->
+<script charset="UTF-8">
+	new daum.roughmap.Lander({
+		"timestamp" : "1688441846638",
+		"key" : "2febg",
+		"mapWidth" : "500",
+		"mapHeight" : "360"
+	}).render();
+</script>
+                
+                <a href="https://www.lottehotel.com/guro-city/ko/dining/restaurant-c-cafe.html" target="_blank" alt="시카페">C`cafe(씨카페)</a>
+                <a href='tel:010-9386-6764'>박정인</a>
+                <a href='tel:010-4042-4058'>박정호</a>
+            </div>
+            <div>장소 복사 카카오톡 연락처 등등</div>
+        </div>
+    </body>
 </html>
