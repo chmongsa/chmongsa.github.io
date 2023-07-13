@@ -11,7 +11,7 @@ h6 {font-size: 1.1rem;line-height: 110%}
 .appIconS {width:26px;height:26px;}
 
 .stepDiv {margin-bottom: 30px;text-align: center;}
-.stepTitle {color: #fff;background-color: #b18b8a;padding: 2px 10px;border-radius: 100px;}
+.stepTitle {color: #fff;background-color: #b18b8a;padding: 4px 30px;border-radius: 100px;}
 
 @media (min-width: 576px) {
     #wrap {padding: 0 10px;}
